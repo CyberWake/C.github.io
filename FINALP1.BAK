@@ -1,0 +1,3092 @@
+/*This Program Is Made for mobile by Ayush Dubey and Ankur Pal Of Class XII-A
+Which Is a Program for the demonstration of mobile phone which consists
+of mobile apps that are MESSAGES, CONTACTS, CALCULATOR, CONVERTOR, GAMES,
+STOPWATCH, MENSURATION MENU, FLASHLIGHT.
+			HOPE YOU ENJOY IT 
+*/
+#include<stdio.h>
+#include<fstream.h>
+#include<complex.h>
+#include<string.h>
+#include<conio.h>
+#include<graphics.h>
+#include<dos.h>
+#include<process.h>
+#include<iostream.h>
+#include<stdlib.h>
+/*This Function Displays The Lockscreen Which Asks Password From The User And
+  Forwards It To Home Screen*/
+void pass()
+{
+	clrscr();
+	cleardevice();
+	setbkcolor(0);
+	int p1,p2,p3,p4,p5;
+	char ch[20];
+	settextstyle(2,0,5);
+	outtextxy(170,220,"ENTER THE PIN ->");
+	gotoxy(47,15);
+	rectangle(340,215,440,245);
+		gets(ch);
+
+	delay(500);
+	char ch1[20]={"aaaa"};
+	if( (strcmpi(ch,ch1))==1)
+	{
+		clrscr();
+		cleardevice();
+		cout<<"WRONG PASSWORD\n\n\n";
+		cout<<"THE MOBILE IS GETTING SHUT DOWN";
+		for(int i=0;i<9;i++)
+		{
+			cout<<".";
+			delay(200);
+		}
+		exit(0);
+	}
+}
+
+//VSEC STARTS
+class adds
+{
+    protected:
+	char fn[20],ln[20],dob[20],ads[50],pn[30],st[30],gd;
+	int mb,cl;
+	public:
+	void init()
+	{
+		gotoxy(25,6);
+		gets(fn);
+		gotoxy(60,6);
+		gets(ln);
+		gotoxy(25,9);
+		cin>>cl;
+		gotoxy(60,9);
+		gets(dob);
+		gotoxy(25,12);
+		gets(pn);
+		gotoxy(60,12);
+		cin>>gd;
+		gotoxy(25,15);
+		gets(ads);
+		gotoxy(25,18);
+		gets(st);
+		gotoxy(60,18);
+		cin>>mb;
+	}
+    char* getfn()
+    {
+        return fn;
+    }
+    char* getln()
+    {
+        return ln;
+    }
+    char* getdob()
+    {
+        return dob;
+    }
+    char* getpn()
+    {
+        return pn;
+    }
+    char* getads()
+    {
+        return ads;
+    }
+    int getmb()
+    {
+        return mb;
+    }
+}o1;
+
+class record:public adds
+{
+    public:
+    void display()
+    {
+        cout<<"      "<<fn<<"        "<<ln<<"           "<<pn<<"         "<<cl<<"       "<<dob<<endl<<endl;
+    }
+    void cfn(char a[])
+    {
+        strcpy(fn,a);
+    }
+    void cln(char a[])
+    {
+        strcpy(ln,a);
+    }
+    void cpn(char a[])
+    {
+        strcpy(pn,a);
+    }
+    void cmb(int a)
+    {
+        mb=a;
+    }
+}r1;
+
+void start()
+{
+	clrscr();
+	cleardevice();
+    setbkcolor(0);
+    int s1;
+    int midx, midy,left,top,right,bottom;
+	int stangle = 45, endangle = 135;
+	int rad= 30;
+	int radius = 50;
+    rectangle(10,1,639,115);
+	line(650,110,10,110);
+	circle(60, 50, radius);
+    left = getmaxx() / 2 - 50;
+	top = getmaxy() / 2 - 50;
+	right = getmaxx() / 2 + 50;
+	bottom = getmaxy() / 2 + 50;
+    arc(60, 68, stangle, endangle, rad);
+	rectangle(30,48,60,85);
+	rectangle(60,48,89,85);
+	for(int u=50;u<80;u=u+3)
+	{
+		for(int i=31;i<80;i=i+8)
+		{
+			outtextxy(i,u,"-");
+		}
+	}
+	setcolor(2);
+    settextstyle(7,0,4);
+	outtextxy(120,20,"Dr.Virendra Swarup Education");
+	outtextxy(310,60,"Centre.");
+    setcolor(3);
+	settextstyle(4,0,3);
+	outtextxy(250,117,"Admission Open");
+	cout<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl;
+	cout<<"                              -------------------------";
+	rectangle(60,160,600,360);
+	cout<<endl<<endl<<"       *    Salient Features :-"<<endl<<endl;
+	cout<<"       * "<<endl<<endl;
+	cout<<"       * "<<endl<<endl;
+	cout<<"       * "<<endl<<endl;
+	cout<<"       * "<<endl<<endl;
+	cout<<"       * "<<endl<<endl<<endl;
+	cout<<"       For any queries contact"<<endl;
+	cout<<"       Ph no. - 9988776655"<<endl;
+	cout<<"       Mob no. - 9988776644"<<endl;
+	cout<<"       Email - DrVSEC123@gmail.com"<<endl;
+    setcolor(5);
+    settextstyle(2,0,4);
+	outtextxy(90,210,"1-> TAKE A ADMISSION");
+	outtextxy(90,240,"2-> MODIFY");
+	outtextxy(90,270,"3-> VIEW");
+    outtextxy(90,300,"4-> EXIT");
+    setcolor(6);
+	outtextxy(250,337,"ENTER YOUR CHOICE -> ");
+    gotoxy(48,22);
+	cin>>s1;
+	if(s1==1)
+	{
+		void addf();
+		addf();
+	}
+	else if(s1==2)
+	{
+		void modify();
+        modify();
+	}
+    else if(s1==3)
+    {
+        void view();
+        view();
+    }
+	else
+	{
+        void apps();
+		apps();
+	}
+}
+void addf()
+{
+	char a1[20],a2[20],a3[20],a4[20],a5[20],a6[20],a7;
+	int a8,a9;
+	cleardevice();
+	setbkcolor(0);
+	settextstyle(DEFAULT_FONT,1,3);
+    setcolor(15);
+	outtextxy(50,10,"DR. VIRENDRA SWARUP");
+	rectangle(5,0,55,475);
+	outtextxy(620,40,"EDUCATION CENTRE");
+	rectangle(585,0,635,475);
+	settextstyle(DEFAULT_FONT,0,4);
+	outtextxy(100,10,"ADDMISSION FORM");
+	line(55,55,585,55);
+	settextstyle(2,0,5);
+    setcolor(15);
+	outtextxy(90,80,"FIRST NAME:");
+	rectangle(184,75,300,98);
+	outtextxy(370,80,"LAST NAME:");
+	rectangle(464,75,530,98);
+	outtextxy(370,130,"D.O.B:");
+	rectangle(464,122,530,145);
+	outtextxy(90,130,"CLASS:");
+	rectangle(184,122,300,145);
+	outtextxy(90,180,"PARENT NAME:");
+	rectangle(184,172,300,195);
+	outtextxy(370,180,"GENDER:");
+	rectangle(464,172,530,195);
+	outtextxy(90,230,"ADDRESS:");
+	rectangle(184,222,530,245);
+	outtextxy(90,280,"STATE:");
+	rectangle(184,269,300,292);
+	outtextxy(370,280,"PIN(3 DIGIT):");
+	rectangle(464,269,530,292);
+	o1.init();
+    fstream f1("sch.txt",ios::app|ios::binary);
+	f1.write((char*)&o1,sizeof(o1));
+	settextstyle(DEFAULT_FONT,0,2);
+	outtextxy(208,390,"Processing");
+	delay(200);
+	outtextxy(370,390,".");
+	delay(200);
+	outtextxy(380,390,".");
+	delay(200);
+	outtextxy(390,390,".");
+	delay(200);
+	outtextxy(400,390,".");
+	delay(200);
+	outtextxy(410,390,".");
+	delay(200);
+	outtextxy(420,390,".");
+	delay(200);
+	outtextxy(430,390,".");
+	delay(200);
+	outtextxy(440,390,".");
+	settextstyle(2,0,5);
+	outtextxy(203,420,"CHECKING FOR VACCANCIES");
+	delay(200);
+	outtextxy(390,420,".");
+	delay(200);
+	outtextxy(400,420,".");
+	delay(200);
+	outtextxy(410,420,".");
+	delay(200);
+	outtextxy(420,420,".");
+	delay(200);
+	outtextxy(430,420,".");
+	delay(200);
+	outtextxy(440,420,".");
+	delay(200);
+	outtextxy(450,420,".");
+	delay(200);
+	outtextxy(460,420,".");
+    clrscr();
+	cleardevice();
+    setbkcolor(0);
+    f1.close();
+    cout<<"ADDMISSION GRANTED";
+    delay(2000);
+    void start();
+    start();
+}
+void modify()
+{
+    clrscr();
+    cleardevice();
+    int s1;
+    setcolor(15);
+	settextstyle(DEFAULT_FONT,1,3);
+	outtextxy(50,10,"DR. VIRENDRA SWARUP");
+	rectangle(5,0,55,475);
+    outtextxy(620,40,"EDUCATION CENTRE");
+	rectangle(585,0,635,475);
+    setcolor(4);
+    settextstyle(DEFAULT_FONT,0,2);
+    outtextxy(270,10,"MODIFY");
+	line(55,30,585,30);
+	settextstyle(2,0,7);
+    setcolor(5);
+	outtextxy(70,60,"1-> FIRST NAME");
+	outtextxy(70,90,"2-> LAST NAME");
+	outtextxy(70,120,"3-> PARENT'S NAME");
+	outtextxy(70,150,"4-> PHONE NO");
+    outtextxy(70,180,"5-> EXIT");
+	outtextxy(170,378,"ENTER YOUR CHOICE -> ");
+    gotoxy(53,25);
+	cin>>s1;
+    gotoxy(0,0);
+	if(s1==1)
+	{
+        int n1;
+        char n2[20];
+        cleardevice();
+        setcolor(15);
+	    settextstyle(DEFAULT_FONT,1,3);
+        outtextxy(50,10,"DR. VIRENDRA SWARUP");
+        rectangle(5,0,55,475);
+        outtextxy(620,40,"EDUCATION CENTRE");
+	    rectangle(585,0,635,475);
+        setcolor(4);
+        settextstyle(DEFAULT_FONT,0,2);
+        outtextxy(180,10,"MODIFY FIRST NAME");
+       	line(55,30,585,30);
+        settextstyle(2,0,5);
+        setcolor(5);
+        outtextxy(70,75,"ENTER THE PIN OF THE STUDENT FOR WHICH YOU WANT TO CHANGE ");
+        outtextxy(70,95,"THE NAME -> ");
+        gotoxy(21,7);
+        cin>>n1;
+        fstream f2("sch.txt",ios::in|ios::binary);
+        if(!f2)
+        {
+            cout<<"FILE NOT FOUND";
+            exit(0);
+        }
+        else
+        {
+            while(!f2.eof())
+            {
+                f2.read((char*)&r1,sizeof(record));
+                if(r1.getmb()==n1)
+                {
+                    clrscr();
+                    cleardevice();
+                    cout<<"MATCH FOUND\n\n";
+                    cout<<"Enter The New Name -> ";
+                    gets(n2);
+                    r1.cfn(n2);
+                    f2.write((char*)&r1,sizeof(record));
+                    cout<<"\n                            STUDENT INFO          \n ";
+	               	cout<<"\n______________________________________________________________________________\n\n";
+		            cout<<endl<<endl;
+	               	cout<<"    First Name  "<<" Last Name  "<<" Parents name  "<<" Class  "<<" DOB \n";
+		            cout<<"    __________   _________   ____________   _____   ____   \n\n";
+                    r1.display();
+                    delay(5000);
+                    modify();
+                }
+                else
+                {
+                    clrscr();
+                    cleardevice();
+                    cout<<"NO MATCH FOUND";
+                    delay(3000);
+                    modify();
+                }
+            }
+        }
+        f2.close();
+    }
+    else if(s1==2)
+	{
+        int n1;
+        char n2[20];
+        cleardevice();
+        setcolor(15);
+	    settextstyle(DEFAULT_FONT,1,3);
+        outtextxy(50,10,"DR. VIRENDRA SWARUP");
+        rectangle(5,0,55,475);
+        outtextxy(620,40,"EDUCATION CENTRE");
+	    rectangle(585,0,635,475);
+        settextstyle(DEFAULT_FONT,0,2);
+        setcolor(4);
+        outtextxy(180,10,"MODIFY LAST NAME");
+       	line(55,30,585,30);
+        settextstyle(2,0,5);
+        setcolor(5);
+        outtextxy(70,75,"ENTER THE PIN OF THE STUDENT FOR WHICH YOU WANT TO CHANGE ");
+        outtextxy(70,95,"THE NAME -> ");
+        gotoxy(21,7);
+        cin>>n1;
+        fstream f2("sch.txt",ios::in|ios::binary);
+        if(!f2)
+        {
+            cout<<"FILE NOT FOUND";
+            exit(0);
+        }
+        else
+        {
+            while(!f2.eof())
+            {
+                f2.read((char*)&r1,sizeof(record));
+                if(r1.getmb()==n1)
+                {
+                    clrscr();
+                    cleardevice();
+                    cout<<"MATCH FOUND\n\n";
+                    cout<<"Enter The New Name -> ";
+                    gets(n2);
+                    r1.cln(n2);
+                    f2.write((char*)&r1,sizeof(record));
+                    cout<<"\n                            STUDENT INFO          \n ";
+	               	cout<<"\n______________________________________________________________________________\n\n";
+		            cout<<endl<<endl;
+	               	cout<<"    First Name  "<<" Last Name  "<<" Parents name  "<<" Class  "<<" DOB \n";
+		            cout<<"    __________   _________   ____________   _____   ____   \n\n";
+                    r1.display();
+                    delay(5000);
+                    modify();
+                }
+                else
+                {
+                    clrscr();
+                    cleardevice();
+                    cout<<"NO MATCH FOUND";
+                    delay(3000);
+                    modify();
+                    r1.display();
+                    modify();
+                }
+            }
+        }
+        f2.close();
+    }
+    else if(s1==3)
+	{
+        int n1;
+        char n2[20];
+        cleardevice();
+        setcolor(15);
+	    settextstyle(DEFAULT_FONT,1,3);
+        outtextxy(50,10,"DR. VIRENDRA SWARUP");
+        rectangle(5,0,55,475);
+        outtextxy(620,40,"EDUCATION CENTRE");
+	    rectangle(585,0,635,475);
+        settextstyle(DEFAULT_FONT,0,2);
+        setcolor(4);
+        outtextxy(180,10,"MODIFY PARENT NAME");
+       	line(55,30,585,30);
+        settextstyle(2,0,5);
+        setcolor(5);
+        outtextxy(70,75,"ENTER THE PIN OF THE STUDENT FOR WHICH YOU WANT TO CHANGE ");
+        outtextxy(70,95,"THE NAME -> ");
+        gotoxy(21,7);
+        cin>>n1;
+        fstream f2("sch.txt",ios::in|ios::binary);
+        if(!f2)
+        {
+            cout<<"FILE NOT FOUND";
+            exit(0);
+        }
+        else
+        {
+            while(!f2.eof())
+            {
+                f2.read((char*)&r1,sizeof(record));
+                if(r1.getmb()==n1)
+                {
+                    clrscr();
+                    cleardevice();
+                    cout<<"MATCH FOUND\n\n";
+                    cout<<"Enter The New Name -> ";
+                    gets(n2);
+                    r1.cpn(n2);
+                    f2.write((char*)&r1,sizeof(record));
+                    cout<<"\n                            STUDENT INFO          \n ";
+	               	cout<<"\n______________________________________________________________________________\n\n";
+		            cout<<endl<<endl;
+	               	cout<<"    First Name  "<<" Last Name  "<<" Parents name  "<<" Class  "<<" DOB \n";
+		            cout<<"    __________   _________   ____________   _____   ____   \n\n";
+                    r1.display();
+                    delay(5000);
+                    modify();
+                }
+                else
+                {
+                    clrscr();
+                    cleardevice();
+                    cout<<"NO MATCH FOUND";
+                    delay(3000);
+                    modify();
+                }
+            }
+        }
+        f2.close();
+    }
+    else if(s1==4)
+	{
+        int n1;
+        int n2;
+        cleardevice();
+        setcolor(15);
+	    settextstyle(DEFAULT_FONT,1,3);
+        outtextxy(50,10,"DR. VIRENDRA SWARUP");
+        rectangle(5,0,55,475);
+        outtextxy(620,40,"EDUCATION CENTRE");
+	    rectangle(585,0,635,475);
+        settextstyle(DEFAULT_FONT,0,2);
+        setcolor(4);
+        outtextxy(180,10,"MODIFY PARENT NAME");
+       	line(55,30,585,30);
+        settextstyle(2,0,5);
+        setcolor(5);
+        outtextxy(70,75,"ENTER THE PIN OF THE STUDENT FOR WHICH YOU WANT TO CHANGE ");
+        outtextxy(70,95,"THE NAME -> ");
+        gotoxy(21,7);
+        cin>>n1;
+        fstream f2("sch.txt",ios::in|ios::binary);
+        if(!f2)
+        {
+            cout<<"FILE NOT FOUND";
+            exit(0);
+        }
+        else
+        {
+            while(!f2.eof())
+            {
+                f2.read((char*)&r1,sizeof(record));
+                if(r1.getmb()==n1)
+                {
+                    clrscr();
+                    cleardevice();
+                    cout<<"MATCH FOUND\n\n";
+                    cout<<"Enter The New no.(5 digit) -> ";
+                    cin>>n2;
+                    r1.cmb(n2);
+                    f2.write((char*)&r1,sizeof(record));
+                    cout<<"\n                            STUDENT INFO          \n ";
+	               	cout<<"\n______________________________________________________________________________\n\n";
+		            cout<<endl<<endl;
+	               	cout<<"    First Name  "<<" Last Name  "<<" Parents name  "<<" Class  "<<" DOB \n";
+		            cout<<"    __________   _________   ____________   _____   ____   \n\n";
+                    r1.display();
+                    delay(5000);
+                    modify();
+                }
+                else
+                {
+                    clrscr();
+                    cleardevice();
+                    cout<<"NO MATCH FOUND";
+                    delay(3000);
+                    modify();
+                }
+            }
+        }
+        f2.close();
+    }
+    else
+    {
+        cleardevice();
+        void start();
+        start();
+    }
+}
+void view()
+{
+        clrscr();
+        cleardevice();
+        int n1;
+        setcolor(15);
+	    settextstyle(DEFAULT_FONT,1,3);
+        outtextxy(50,10,"DR. VIRENDRA SWARUP");
+        rectangle(5,0,55,475);
+        outtextxy(620,40,"EDUCATION CENTRE");
+	    rectangle(585,0,635,475);
+        settextstyle(DEFAULT_FONT,0,2);
+        setcolor(4);
+        outtextxy(250,10,"DISPLAY");
+       	line(55,30,585,30);
+        settextstyle(2,0,5);
+        setcolor(5);
+        outtextxy(80,75,"1-> ALL STUDENTS");
+        outtextxy(80,115,"2-> INDIVIDUAL STUDENT");
+        outtextxy(80,155,"3-> EXIT");
+        outtextxy(173,238,"ENTER CHOICE -> ");
+        gotoxy(38,16);
+        cin>>n1;
+        if(n1==1)
+        {
+            clrscr();
+            cleardevice();
+            cout<<"\n                            STUDENT INFO          \n ";
+            cout<<"\n______________________________________________________________________________\n\n";
+           	cout<<endl<<endl;
+      	    cout<<"    First Name  "<<" Last Name  "<<" Parents name  "<<" Class  "<<" DOB \n";
+      		cout<<"    __________   _________   ____________   _____   ____   \n\n";
+            fstream f2("sch.txt",ios::in|ios::binary);
+            if(!f2)
+            {
+                cout<<"FILE NOT FOUND";
+                exit(0);
+            }
+            else
+            {
+                while(!f2.eof())
+                {
+                    f2.read((char*)&r1,sizeof(record));
+                    r1.display();
+                    delay(1000);
+                }
+                delay(4000);
+                view();
+            }
+        }
+        else if(n1==2)
+        {
+            int n1;
+            int n2;
+            cleardevice();
+            setcolor(15);
+	    settextstyle(DEFAULT_FONT,1,3);
+        outtextxy(50,10,"DR. VIRENDRA SWARUP");
+        rectangle(5,0,55,475);
+        outtextxy(620,40,"EDUCATION CENTRE");
+	    rectangle(585,0,635,475);
+        settextstyle(DEFAULT_FONT,0,2);
+        setcolor(4);
+        outtextxy(180,10,"MODIFY PARENT NAME");
+       	line(55,30,585,30);
+        settextstyle(2,0,5);
+        setcolor(5);
+        outtextxy(70,75,"ENTER THE PIN OF THE STUDENT FOR WHICH YOU WANT TO DISPLAY ");
+        outtextxy(70,95,"THE RECORD -> ");
+        gotoxy(21,7);
+        cin>>n1;
+        fstream f2("sch.txt",ios::in|ios::binary);
+        if(!f2)
+        {
+            cout<<"FILE NOT FOUND";
+            exit(0);
+        }
+        else
+        {
+            while(!f2.eof())
+            {
+                f2.read((char*)&r1,sizeof(record));
+                if(r1.getmb()==n1)
+                {
+                    clrscr();
+                    cleardevice();
+                    cout<<"MATCH FOUND\n\n";
+                    clrscr();
+                    cleardevice();
+                    cout<<"\n                            STUDENT INFO          \n ";
+	               	cout<<"\n______________________________________________________________________________\n\n";
+		            cout<<endl<<endl;
+	               	cout<<"    First Name  "<<" Last Name  "<<" Parents name  "<<" Class  "<<" DOB \n";
+		            cout<<"    __________   _________   ____________   _____   ____   \n\n";
+                    r1.display();
+                    delay(5000);
+                    view();
+                }
+                else
+                {
+                    clrscr();
+                    cleardevice();
+                    cout<<"NO MATCH FOUND";
+                    delay(3000);
+                    view();
+                }
+            }
+        }
+    }
+    else
+    {
+        void apps();
+        apps();
+    }
+}
+//VSEC ENDS
+
+//CRICCBUZ START
+void cric()
+{
+	clrscr();
+	cleardevice();
+	setbkcolor(0);
+	void apps();
+	struct bat
+	{
+		char name[30];
+		int run;
+		int ball;
+		int four;
+		int six;
+		char out[5];
+		char mode[20];
+
+	}b1={"Rohit Sharma",264,163,33,9,"Out","Caught"},b2={"Ajinkya Rahane",26,32,2,0,"Out","LBW"},b3={"Ambatti Rayudu",45,40,5,1,"Out","Caught"},b4={"Virat Kohli",66,70,9,0,"Out","Run Out"},b5={"Robin Utthapa",12,12,1,0,"****","------"};
+	struct bowl
+	{
+		char name[30];
+		int o;
+		int m;
+		int r;
+		int w;
+		float e;
+	}p1={"Ajanta Mendis",10,0,103,2,10.3},p2={"Rangna Harath",10,0,75,2,7.5},p3={"TM Dilshan",7,0,84,0,12},p4={"Anjelo Mathwes",5,0,50,0,10},p5={"Chamara    ",10,0,89,0,8.9},p6={"Chamira    ",8,0,72,0,9};
+	clrscr();
+	cleardevice();
+	int a,b,c,d;
+	cout<<"                             ------------------\n";
+	cout<<"			     Scorecard Ind vs SL\n";
+	cout<<"                             -------------------\n\n";
+	cout<<"________________________________________________________________________________";
+	cout<<"\n\n1- Batting Scorecard";
+	cout<<"\n\n2- Bowling Scorecard";
+	cout<<"\n\n3- Exit";
+	cout<<"\n\nEnter The Choice -> ";
+	cin>>a;
+	if(a==1)
+	{
+		clrscr();
+		cleardevice();
+		cout<<"Recieving Data";
+		for(int i=0 ; i<10 ; i++)
+		{
+			cout<<".";
+			delay(50);
+		}
+		clrscr();
+		cleardevice();
+		int z;
+		cout<<"\n1- Individual Batsman\n\n";
+		cout<<"2- Full Team \n\n";
+		cout<<"\nEnter The Choice -> ";
+		cin>>z;
+		if(z==1)
+		{
+			clrscr();
+			cleardevice();
+			char x[10];
+			int y;
+			cout<<"Enter The Batsman Name -> ";
+			gets(x);
+			clrscr();
+			cleardevice();
+			cout<<"                            Batting Scorecard          \n ";
+			cout<<"______________________________________________________________________________\n\n";
+			cout<<endl<<endl;
+			cout<<"Player's Name  "<<" Runs  "<<" Balls  "<<"Fours "<<"   Sixes  "<<" Status  "<<" Mode  \n";
+			cout<<"_____________   ____   _____   _____   _____   ______   ____   \n\n";
+			if(!(strcmpi(x,"rohit")))
+			{
+				cout<<b1.name<<'\t'<<b1.run<<'\t'<<b1.ball<<'\t'<<b1.four<<'\t'<<b1.six<<'\t'<<b1.out<<'\t'<<b1.mode<<'\t'<<endl<<endl;
+				delay(5000);
+				cric();
+			}
+			else if(!(strcmpi(x,"Ajinkya")))
+			{
+				cout<<b2.name<<'\t'<<b2.run<<'\t'<<b2.ball<<'\t'<<b2.four<<'\t'<<b2.six<<'\t'<<b2.out<<'\t'<<b2.mode<<'\t'<<endl<<endl;
+				delay(5000);
+				cric();
+			}
+			else if(!(strcmpi(x,"Rayudu")))
+			{
+				cout<<b3.name<<'\t'<<b3.run<<'\t'<<b3.ball<<'\t'<<b3.four<<'\t'<<b3.six<<'\t'<<b3.out<<'\t'<<b3.mode<<'\t'<<endl<<endl;
+				delay(5000);
+				cric();
+			}
+			else if(!(strcmpi(x,"Kohli")))
+			{
+				cout<<b4.name<<'\t'<<b4.run<<'\t'<<b4.ball<<'\t'<<b4.four<<'\t'<<b4.six<<'\t'<<b4.out<<'\t'<<b4.mode<<'\t'<<endl<<endl;
+				delay(5000);
+				cric();
+			}
+			else if(!(strcmpi(x,"Uthappa")))
+			{
+				cout<<b5.name<<'\t'<<b5.run<<'\t'<<b5.ball<<'\t'<<b5.four<<'\t'<<b5.six<<'\t'<<b5.out<<'\t'<<b5.mode<<'\t'<<endl<<endl;
+				delay(5000);
+				cric();
+			}
+			else
+				cout<<"Invalid";
+				delay(5000);
+				cric();
+		}
+		else if(z==2)
+		{
+			clrscr();
+			cleardevice();
+			cout<<"                            -----------------\n";
+			cout<<"                            Batting Scorecard          \n ";
+			cout<<"                           -----------------\n\n";
+			cout<<"______________________________________________________________________________\n\n";
+			cout<<"Player's Name  "<<" Runs  "<<" Balls  "<<"Fours "<<"   Sixes  "<<" Status  "<<" Mode  \n";
+			cout<<"_____________   ____   _____   _____   _____   ______   ____   \n\n";
+			delay(300);
+			cout<<b1.name<<'\t'<<b1.run<<'\t'<<b1.ball<<'\t'<<b1.four<<'\t'<<b1.six<<'\t'<<b1.out<<'\t'<<b1.mode<<'\t'<<endl<<endl;
+			delay(300);
+			cout<<b2.name<<'\t'<<b2.run<<'\t'<<b2.ball<<'\t'<<b2.four<<'\t'<<b2.six<<'\t'<<b2.out<<'\t'<<b2.mode<<'\t'<<endl<<endl;
+			delay(300);
+			cout<<b3.name<<'\t'<<b3.run<<'\t'<<b3.ball<<'\t'<<b3.four<<'\t'<<b3.six<<'\t'<<b3.out<<'\t'<<b3.mode<<'\t'<<endl<<endl;
+			delay(300);
+			cout<<b4.name<<'\t'<<b4.run<<'\t'<<b4.ball<<'\t'<<b4.four<<'\t'<<b4.six<<'\t'<<b4.out<<'\t'<<b4.mode<<'\t'<<endl<<endl;
+			delay(300);
+			cout<<b5.name<<'\t'<<b5.run<<'\t'<<b5.ball<<'\t'<<b5.four<<'\t'<<b5.six<<'\t'<<b5.out<<'\t'<<b5.mode<<'\t'<<endl;
+			delay(5000);
+			cric();
+		}
+	}
+	else if(a==2)
+	{
+		clrscr();
+		cleardevice();
+		cout<<"Recieving Data";
+		for(int i=0 ; i<10 ; i++)
+		{
+			cout<<".";
+			delay(50);
+		}
+		clrscr();
+		cleardevice();
+		int z;
+		cout<<"\n1- Individual Bolwer\n\n";
+		cout<<"2- Full Team \n\n";
+		cout<<"\nEnter The Choice -> ";
+		cin>>z;
+		if(z==1)
+		{
+			clrscr();
+			cleardevice();
+			char x[10];
+			int y;
+			cout<<"Enter The Bowler's Name -> ";
+			gets(x);
+			clrscr();
+			cout<<"                        -----------------\n";
+			cout<<"                        Bowling Scorecard              \n";
+			cout<<"                        ------------------\n\n";
+			cout<<"_______________________________________________________________________________\n\n\n";
+			cout<<"Bowler's Name  "<<" Over  "<<" Maiden  "<<"Runs "<<"  Wickets  "<<" Economy \n";
+			cout<<"_____________   ____   _____   _____   _____   ______  \n\n";
+			if(!(strcmpi(x,"mendis")))
+			{
+				cout<<p1.name<<'\t'<<p1.o<<'\t'<<p1.m<<'\t'<<p1.r<<'\t'<<p1.w<<'\t'<<p1.e<<'\t'<<endl<<endl;
+				delay(5000);
+				cric();
+			}
+			else if(!(strcmpi(x,"harath")))
+			{
+				cout<<p2.name<<'\t'<<p2.o<<'\t'<<p2.m<<'\t'<<p2.r<<'\t'<<p2.w<<'\t'<<p2.e<<'\t'<<endl<<endl;
+				delay(5000);
+				cric();
+			}
+			else if(!(strcmpi(x,"dilshan")))
+			{
+				cout<<p3.name<<'\t'<<p3.o<<'\t'<<p3.m<<'\t'<<p3.r<<'\t'<<p3.w<<'\t'<<p3.e<<'\t'<<endl<<endl;
+				delay(5000);
+				cric();
+			}
+			else if(!(strcmpi(x,"mathwes")))
+			{
+				cout<<p4.name<<'\t'<<p4.o<<'\t'<<p4.m<<'\t'<<p4.r<<'\t'<<p4.w<<'\t'<<p4.e<<'\t'<<endl<<endl;
+				delay(5000);
+				cric();
+			}
+			else if(!(strcmpi(x,"chamara")))
+			{
+				cout<<p5.name<<'\t'<<p5.o<<'\t'<<p5.m<<'\t'<<p5.r<<'\t'<<p5.w<<'\t'<<p5.e<<'\t'<<endl<<endl;
+				delay(5000);
+				cric();
+			}
+			else if(!(strcmpi(x,"chamira")))
+			{
+				cout<<p6.name<<'\t'<<p6.o<<'\t'<<p6.m<<'\t'<<p6.r<<'\t'<<p6.w<<'\t'<<p6.e<<'\t'<<endl<<endl;
+				delay(5000);
+				cric();
+			}
+			else
+				cout<<"Invalid";
+				delay(5000);
+				cric();
+		}
+		else if(z==2)
+		{
+			clrscr();
+			cleardevice();
+			cout<<"                        Bowling Scorecard              \n";
+			cout<<"_______________________________________________________________________________\n\n\n";
+			cout<<"Bowler's Name  "<<" Over  "<<" Maiden  "<<"Runs "<<"  Wickets  "<<" Economy \n";
+			cout<<"_____________   ____   _____   _____   _____   ______  \n\n";
+			delay(300);
+			cout<<p1.name<<'\t'<<p1.o<<'\t'<<p1.m<<'\t'<<p1.r<<'\t'<<p1.w<<'\t'<<p1.e<<'\t'<<endl<<endl;
+			delay(300);
+			cout<<p2.name<<'\t'<<p2.o<<'\t'<<p2.m<<'\t'<<p2.r<<'\t'<<p2.w<<'\t'<<p2.e<<'\t'<<endl<<endl;
+			delay(300);
+			cout<<p3.name<<'\t'<<p3.o<<'\t'<<p3.m<<'\t'<<p3.r<<'\t'<<p3.w<<'\t'<<p3.e<<'\t'<<endl<<endl;
+			delay(300);
+			cout<<p4.name<<'\t'<<p4.o<<'\t'<<p4.m<<'\t'<<p4.r<<'\t'<<p4.w<<'\t'<<p4.e<<'\t'<<endl<<endl;
+			delay(300);
+			cout<<p5.name<<'\t'<<p5.o<<'\t'<<p5.m<<'\t'<<p5.r<<'\t'<<p5.w<<'\t'<<p5.e<<'\t'<<endl<<endl;
+			delay(300);
+			cout<<p6.name<<'\t'<<p6.o<<'\t'<<p6.m<<'\t'<<p6.r<<'\t'<<p6.w<<'\t'<<p6.e<<'\t'<<endl<<endl<<endl;
+			delay(5000);
+			cric();
+
+		}
+	}
+	else
+	{
+		clrscr();
+		cleardevice();
+		cout<<"The Program Is Exiting";
+		for(int i=0 ; i<10 ; i++)
+		{
+			delay(200);
+			cout<<".";
+		}
+		apps();
+	}
+	getch();
+}
+//CRICCBUZ ENDS
+
+//CALCULATOR ENDS
+void calculator()
+{
+	void apps();
+	clrscr();
+	cleardevice();
+	calc:
+	setbkcolor(0);
+	clrscr();
+	cleardevice();
+	setbkcolor(0);
+       /*	int a=0,b=0;
+	while(b<639)
+	{
+		{
+			setcolor(b);
+			outtextxy(627,a,"|");
+			outtextxy(3,a,"|");
+			a=a+15;
+		}
+		{
+			outtextxy(b,459,"-");
+			outtextxy(b,8,"-");
+			b=b+20;
+			delay(100);
+		}
+	}*/
+	int z;
+	settextstyle(7,0,5);
+	outtextxy(225,20,"CALCULATOR");
+	cout<<"\n\n\n\n ____________________________________________________________________________";
+
+	settextstyle(2,0,9);
+	setcolor(2);
+	outtextxy(50,120,"1- STANDARD CALCULATOR");
+	outtextxy(50,160,"2- SCIENTIFIC CALCULATOR");
+	outtextxy(50,200,"3- BACK");
+	cin>>z;
+	if(z==1)
+	{
+		int i;
+		clrscr();
+		cleardevice();
+		setbkcolor(0);
+		calcs:
+		settextstyle(10,0,3);
+		outtextxy(70,10,"STANDARD CALCULATOR");
+		cout<<"\n\n\n\n                              1- Sum\n";
+		cout<<"\n                              2- Difference\n";
+		cout<<"\n                              3- Product\n";
+		cout<<"\n                              4- Division\n";
+		cout<<"\n                              5- Square Root\n";
+		cout<<"\n                              6- Back\n";
+		cin>>i;
+		if(i==1)
+		{
+			clrscr();
+			cleardevice();
+			setbkcolor(0);
+			int a,b,c,sum=0;
+			char ch='y';
+			do
+			{
+				cout<<"\n\nEnter The Number ";
+				cin>>b;
+				cout<<"\nDo You Want To Enter Another Number(Press y)";
+				cin>>ch;
+				sum=sum+b;
+			}while(ch=='y' || ch=='Y');
+			cout<<"Sum Is "<<sum;
+			delay(2500);
+			cleardevice();
+			goto calcs;
+		}
+		else if(i==2)
+		{
+			clrscr();
+			cleardevice();
+			setbkcolor(0);
+			int a,b,c,diff=0;
+			char ch='y';
+			do
+			{
+				cout<<"\n\nEnter The Number ";
+				cin>>b;
+				cout<<"\nDo You Want To Enter Another Number(Press y)";
+				cin>>ch;
+				diff=b-diff;
+			}while(ch=='y' || ch=='Y');
+			cout<<"Difference Is "<<diff;
+			delay(2500);    cleardevice();
+			goto calcs;
+		}
+		else if(i==3)
+		{
+			clrscr();
+			cleardevice();
+			setbkcolor(0);
+			int a,b,c,pro=1;
+			char ch='y';
+			do
+			{
+				cout<<"Enter The Number ";
+				cin>>b;
+				cout<<"\nDo You Want To Enter Another Number(Press y)";
+				cin>>ch;
+				pro=pro*b;
+			}while(ch=='y' || ch=='Y');
+			cout<<"Product Is "<<pro;
+			delay(2500);     cleardevice();
+			goto calcs;
+		}
+		else if(i==4)
+		{
+			clrscr();
+			cleardevice();
+			setbkcolor(0);
+			int a,b,c,q;
+			cout<<"Enter The Dividend ->";
+			cin>>a;
+			cout<<"Enter The Divisor ->";
+			cin>>b;
+			q=a/b;
+			int r;
+			r=a%b;
+			cout<<"Quotient Is ->"<<q;
+			cout<<"\nRemainder is ->"<<r;
+			delay(2500);     cleardevice();
+			goto calcs;
+		}
+		if(i==5)
+		{
+			clrscr();
+			cleardevice();
+			float a,sq;
+			cout<<"Enter The Number For Calculating The Square Root";
+			cin>>a;
+			sq=sqrt(a);
+			cout<<"The Square Root Is ->"<<sq;
+			delay(2000);     cleardevice();
+			goto calcs;
+		}
+
+		else if(i==6)
+		{
+			goto calc;
+		}
+	}
+	else if(z==2)
+	{
+		clrscr();
+		cleardevice();
+		setbkcolor(0);
+		settextstyle(10,0,3);
+		outtextxy(70,10,"SCIENTIFIC CALCULATOR");
+		cout<<"\n\n\n\n\n                                   01- Sum\n";
+		cout<<"\n                                    02- Difference\n";
+		cout<<"\n                                    03- Product\n";
+		cout<<"\n                                    04- Division\n";
+		cout<<"\n                                    05- Square Root\n";
+		cout<<"\n                                    06- Power\n";
+		cout<<"\n                                    07- SIN()\n";
+		cout<<"\n                                    08- COS()\n";
+		cout<<"\n                                    09- TAN()\n";
+		cout<<"\n                                    10- BACK\n";
+		int i;
+		cin>>i;
+		if(i==1)
+		{
+			clrscr();
+			cleardevice();
+			setbkcolor(0);
+			int a,b,c,sum=0;
+			char ch='y';
+			do
+			{
+				cout<<"\n\nEnter The Number ";
+				cin>>b;
+				cout<<"\nDo You Want To Enter Another Number(Press y)";
+				cin>>ch;
+				sum=sum+b;
+			}while(ch=='y' || ch=='Y');
+			cout<<"Sum Is "<<sum;
+			delay(2500);cleardevice();
+			goto calc;
+		}
+		else if(i==2)
+		{
+			clrscr();
+			cleardevice();
+			setbkcolor(0);
+			int a,b,c,diff=0;
+			char ch='y';
+			do
+			{
+				cout<<"\n\nEnter The Number ";
+				cin>>b;
+				cout<<"\nDo You Want To Enter Another Number(Press y)";
+				cin>>ch;
+				diff=diff-b;
+			}while(ch=='y' || ch=='Y');
+			cout<<"Difference Is "<<diff;
+			delay(2500);cleardevice();
+			goto calc;
+		}
+		else if(i==3)
+		{
+			clrscr();
+			cleardevice();
+			setbkcolor(0);
+			int a,b,c,pro=1;
+			char ch='y';
+			do
+			{
+				cout<<"Enter The Number ";
+				cin>>b;
+				cout<<"\nDo You Want To Enter Another Number(Press y)";
+				cin>>ch;
+				pro=pro*a;;
+			}while(ch=='y' || ch=='Y');
+			cout<<"Product Is "<<pro;
+			delay(2500);cleardevice();
+			goto calc;
+		}
+		else if(i==4)
+		{
+			clrscr();
+			cleardevice();
+			setbkcolor(0);
+			int a,b,c,q;
+			cout<<"Enter The Dividend ->";
+			cin>>a;
+			cout<<"Enter The Divisor ->";
+			cin>>b;
+			q=a/b;
+			int r;
+			r=a%b;
+			cout<<"Quotient Is ->"<<q;
+			cout<<"\nRemainder is ->"<<r;
+			delay(2500);cleardevice();
+			goto calc;
+		}
+		if(i==5)
+		{
+			clrscr();
+			cleardevice();
+			setbkcolor(0);
+			float a,sq;
+			cout<<"Enter The Number For Calculating The Square Root";
+			cin>>a;
+			sq=sqrt(a);
+			cout<<"The Square Root Is ->"<<sq;
+			delay(2000);cleardevice();
+			goto calc;
+		}
+		if(i==6)
+		{
+			clrscr();
+			cleardevice();
+			setbkcolor(0);
+			int a,p,b;
+			cout<<"Enter The Base Number ->";
+			cin>>a;
+			cout<<"\nEnter The Exponential Number ->";
+			cin>>b;
+			p=pow(a,b);
+			cout<<"Result Is ->"<<p;
+			delay(2000);cleardevice();
+			goto calc;
+		}
+		if(i==7)
+		{
+			clrscr();
+			cleardevice();
+			setbkcolor(0);
+			float a,r;
+			cout<<"Enter The Angle ->";
+			cin>>a;
+			r=sin(a);
+			cout<<"Result Is ->"<<r;
+			delay(2000);cleardevice();
+			goto calc;
+		}
+		if(i==8)
+		{
+			clrscr();
+			cleardevice();
+			setbkcolor(0);
+			float a,r;
+			cout<<"Enter The Angle ->";
+			cin>>a;
+			r=cos(a);
+			cout<<"Result Is ->"<<r;
+			delay(2000);cleardevice();
+			goto calc;
+		}
+		if(i==9)
+		{
+			clrscr();
+			cleardevice();
+			setbkcolor(0);
+			float a,r;
+			cout<<"Enter The Angle ->";
+			cin>>a;
+			r=tan(a);
+			cout<<"Result Is ->"<<r;
+			delay(2000);cleardevice();
+			goto calc;
+		}
+		if(i==10)
+		{
+			calculator();
+		}
+	}
+	else
+	{
+		apps();
+	}
+
+}
+//CALCULATOR ENDS
+
+//GAME STARTS
+void game()
+{
+	void apps();
+    clrscr();
+    cleardevice();
+	setbkcolor(0);
+	settextstyle(7,0,4);
+	setcolor(5);
+	outtextxy(220,10,"   GAMES");
+	cout<<"\n\n\n________________________________________________________________________________";
+	settextstyle(1,0,3);
+	setcolor(9);
+	outtextxy(50,120,"1-> Try Your Luck");
+	outtextxy(50,170,"2-> KBC");
+	outtextxy(50,220,"3-> Back");
+	int z;
+	cin>>z;
+	if(z==1)
+	{
+		clrscr();
+		cleardevice();
+        textbackground(RED);
+		textcolor(2);
+		char t[]={"HI! THE NAME OF THIS GAME IS TRY YOUR LUCK WHICH IS MADE BY AYUSH AND ANKUR.... RULES ARE SIMPLE THAT IS.. YOU HAVE TO JUST CHOOSE THE CARD OF YOUR CHOICE FROM THE 4 OPTIONS AND  IF THE CARD MATCHES WITH THE PICKED ONE WHICH WE HAVE PICKED THEN BOOM-BOOM +10 TO POINTS AND IF NOT THEN -5."};
+		char t2[]={" 1ST LEVEL TARGET IS TO REACH 50 POINTS IN 9 CHANCES. SO LET US GO....HOPE YOU  ENJOY IT...."};
+		int len2=strlen(t2);
+		int len=strlen(t);
+		for (int i=0 ; i<len ; i++)
+		{
+			cout<<t[i];
+			delay(100);
+		}
+		delay(200);
+
+		clrscr();
+		cleardevice();
+		for ( i=0 ; i<len2 ; i++)
+		{
+			cout<<t2[i];
+			delay(100);
+		}
+		delay(200);
+		for( i=3;i<420;i++)
+		{
+			delay(5);
+			setcolor(i/2);
+			arc(300,200,0,360,i-2);
+		}
+		clrscr();
+		cleardevice();
+		setbkcolor(0);
+		settextstyle(7,0,4);
+		setcolor(7);
+		outtextxy(220,10,"TRY YOUR LUCK");
+		cout<<"\n\n\n________________________________________________________________________________";
+		clrscr();
+		cleardevice();
+		setbkcolor(0);
+		cout<<"\n\n\n\n\n\n\n                                               ";
+		char a=3,b=4,c=5,d=6,r;
+		int z,y=0,x=1;
+		while(x<11)
+		{
+			x++;
+			randomize();
+			clrscr();
+			cleardevice();
+			settextstyle(7,0,4);
+			setcolor(5);
+			outtextxy(220,10,"TRY YOU LUCK");
+			cout<<"\n\n\n________________________________________________________________________________";
+			cout<<"\n1. HEART  - "<<a;
+			cout<<"\n2. DIAMOND- "<<b;
+			cout<<"\n3. CLUB   - "<<c;
+			cout<<"\n4. SPADE  - "<<d;
+			cout<<"\n\nENTER THE CHOICE - ";
+			cin>>z;
+			r=random(4)+3;
+			cout<<"\n\nPICKING THE CARD ON RANDOM";
+			for(int i=0 ; i<10 ; i++)
+			{
+				cout<<".";
+				delay(50);
+			}
+			delay(200);
+			if(r==z+2)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"BOOOOOM! CARDS MATCHED  ";
+				for(int i=0 ; i<10 ; i++)
+				{
+					cout<<".";
+					delay(50);
+				}
+				y=y+10;
+				delay(500);
+			}
+			else
+			{
+				clrscr();
+				cleardevice();
+				cout<<"OPPS! CARDS DID NOT MATCHED  ";
+				for(int i=0 ; i<10 ; i++)
+				{
+					cout<<".";
+					delay(50);
+				}
+				y=y-5;
+				delay(500);
+			}
+			cout<<"\nFINAL SCORE IS "<<y;
+			delay(2000);
+		}
+		if(y>=50)
+		{
+			clrscr();
+			cleardevice();
+			char t3[]="CONGRATS! YPU CACKED 1st LEVEL.....WELCOME TO THE SECOND PHASE OF THE GAME.....EVERYTHING IS SAME JUST THE DIFFERENCE IS THAT HERE YOU HAVE TO SCORE 100 POINTS IN 140 CHANCES.....SO LETS GO.....BEST OF LUCK";
+			int len3=strlen(t3);
+			for(int i=0 ; i<len3 ; i++)
+			{
+				cout<<t3[i];
+				delay(100);
+			}
+			clrscr();
+			cleardevice();
+			setbkcolor(0);
+			settextstyle(7,0,4);
+			setcolor(7);
+			outtextxy(220,10,"TRY YOUR LUCK");
+			cout<<"\n\n\n________________________________________________________________________________";
+			clrscr();
+			cleardevice();
+			setbkcolor(0);
+			cout<<"\n\n\n\n\n\n\n                                               ";
+			char a=3,b=4,c=5,d=6,r;
+			int z,y=0,x=1;
+			while(x<15)
+			{
+				x++;
+				randomize();
+				clrscr();
+				cleardevice();
+				settextstyle(7,0,4);
+				setcolor(5);
+				outtextxy(220,10,"TRY YOU LUCK");
+				cout<<"\n\n\n________________________________________________________________________________";
+				cout<<"\n1. HEART  - "<<a;
+				cout<<"\n2. DIAMOND- "<<b;
+				cout<<"\n3. CLUB   - "<<c;
+				cout<<"\n4. SPADE  - "<<d;
+				cout<<"\n\nENTER THE CHOICE - ";
+				cin>>z;
+				r=random(4)+3;
+				cout<<"\n\nPICKING THE CARD ON RANDOM";
+				for(int i=0 ; i<10 ; i++)
+				{
+					cout<<".";
+					delay(50);
+				}
+				delay(200);
+				if(r==z+2)
+				{
+					clrscr();
+					cleardevice();
+					cout<<"BOOOOOM! CARDS MATCHED  ";
+					for(int i=0 ; i<10 ; i++)
+					{
+						cout<<".";
+						delay(50);
+					}
+					y=y+10;
+					delay(500);
+				}
+				else
+				{
+					clrscr();
+					cleardevice();
+					cout<<"OPPS! CARDS DID NOT MATCHED  ";
+					for(int i=0 ; i<10 ; i++)
+					{
+						cout<<".";
+						delay(50);
+					}
+					y=y-5;
+					delay(500);
+				}
+				cout<<"\nFINAL SCORE IS "<<y;
+				delay(2000);
+			}
+		}
+		else
+		{
+			clrscr();
+			cleardevice();
+			settextstyle(10,0,3);
+			outtextxy(50,150,"TARGET FAILED");
+			delay(2000);
+		}
+	}
+	if(z==2)
+	{
+		top:
+		clrscr();
+		cleardevice();
+		int b,x,y,z,c1,c2,a;
+
+
+		cout<<"                 ########### The KBC Program ##########\n";
+		cout<<"________________________________________________________________________________\n\n";
+		cout<<" 1- Start Game\n\n";
+		cout<<" 2- Rules\n\n";
+		cout<<" 3- Exit\n\n";
+		cin>>c1;
+		if(c1==1)
+		{
+			{
+				clrscr();
+				cleardevice();
+				cout<<"            ************Welcome To The KBC Game**********\n";
+				cout<<"________________________________________________________________________________\n\n";
+				delay(2000);
+				cout<<"Question 1- Who Is The Captain Of Indian Cricket Team?\n\n";
+				cout<<"1- Rohit Sharma			 2-Virat Kohli\n";
+				cout<<"3- MS Dhoni                       4-Shikhar Dhawan\n\n";
+				cout<<"Enter Choice ->";
+				cin>>a;
+				cout<<endl<<endl;
+				if(a==3)
+				{
+					cout<<"You Are Right And Win 10 Lakhs\n";
+					delay(2000);
+				}
+				else
+				{
+					clrscr();
+					cleardevice();
+					cout<<"You Are Wrong And You Lose\n";
+					delay(700);
+					cout<<"1- Play Again\n\n";
+					cout<<"2- Quit\n\n";
+					cin>>a;
+					if(a==1)
+						goto top;
+					else
+					{
+						delay(500);
+						apps();
+					}
+				}
+
+			}
+			{
+				clrscr();
+				cleardevice();
+				cout<<"            ************Welcome To The KBC Game**********\n";
+				cout<<"________________________________________________________________________________\n\n";
+				delay(2000);
+				cout<<"Question 2- Who Is The P.M. Of India\n\n";
+				cout<<"1- Narendra Modi                  2- Pranav Mukherji\n";
+				cout<<"3- Mamta Banerjji                 4- Akhilesh Yadav\n\n";
+				cout<<"Enter Choice ->";
+				cin>>a;
+				cout<<endl<<endl;
+				if(a==1)
+				{
+					cout<<"You Are Right And Win 20 Lakhs\n";
+					delay(2000);
+				}
+				else
+				{
+
+					clrscr();
+					cleardevice();
+					cout<<"You Are Wrong And You Lose\n";
+					delay(700);
+					cout<<"1- Play Again\n\n";
+					cout<<"2- Quit";
+					cin>>a;
+					if(a==1)
+						goto top;
+					else
+					{
+						delay(500);
+						apps();
+					}
+				}
+
+			}
+			{
+				clrscr();
+				cleardevice();
+				cout<<"            ************Welcome To The KBC Game**********\n";
+				cout<<"________________________________________________________________________________\n\n";
+				delay(2000);
+				cout<<"Question 3- Who Is The President Of India\n\n";
+				cout<<"1- Narendra Modi                  2-Pranav Mukherjji\n";
+				cout<<"3- Manmohan Singh                 4-Pratibha Patil\n\n";
+				cout<<"Enter Choice ->";
+				cin>>a;
+				cout<<endl<<endl;
+				if(a==2)
+				{
+					cout<<"You Are Right And Win 30 Lakhs\n";
+					delay(2000);
+				}
+				else
+				{
+
+					clrscr();
+					cleardevice();
+					cout<<"You Are Wrong And You Lose\n";
+					delay(700);
+					cout<<"1- Play Again\n\n";
+					cout<<"2- Quit";
+					cin>>a;
+					if(a==1)
+						goto top;
+					else
+					{
+						delay(500);
+						apps();
+					}
+				}
+
+			}
+			{
+				clrscr();
+				cleardevice();
+				cout<<"            ************Welcome To The KBC Game**********\n";
+				cout<<"________________________________________________________________________________\n\n";
+				delay(2000);
+				cout<<"Question 4- Who Is The Chief Minister Of U.P.\n\n";
+				cout<<"1- Adityanath Yogi                  2- Pranav Mukherji\n";
+				cout<<"3- Mamta Banerjji                 4- Akhilesh Yadav\n\n";
+				cout<<"Enter Choice ->";
+				cin>>a;
+				cout<<endl<<endl;
+				if(a==1)
+				{
+					cout<<"You Are Right And Win 40 Lakhs\n";
+					delay(2000);
+				}
+				else
+				{
+					clrscr();cleardevice();
+					cout<<"You Are Wrong And You Lose\n";
+					delay(700);
+					cout<<"1- Play Again\n\n";
+					cout<<"2- Quit";
+					cin>>a;
+					if(a==1)
+						goto top;
+					else
+					{
+						delay(500);
+						apps();
+					}
+
+				}
+			}
+			{
+				clrscr();        cleardevice();
+				cout<<"            ************Welcome To The KBC Game**********\n";
+				cout<<"________________________________________________________________________________\n\n";
+				delay(2000);
+				cout<<"Question 5- Who Is The President Of America\n\n";
+				cout<<"1- Barack Obama             2- Hillary Clinton\n";
+				cout<<"3- Richard Verma            4- Donald Trump\n\n";
+				cout<<"Enter Choice ->";
+				cin>>a;
+				cout<<endl<<endl;
+				if(a==4)
+				{
+					cout<<"You Are Right And Win 50 Lakhs\n";
+					delay(2000);
+				}
+				else
+				{
+					clrscr();cleardevice();
+					cout<<"You Are Wrong And You Lose\n";
+					delay(700);
+					cout<<"1- Play Again\n\n";
+					cout<<"2- Quit";
+					cin>>a;
+					if(a==1)
+						goto top;
+					else
+					{
+						delay(500);
+						apps();
+					}
+				}
+			}
+			{
+				clrscr();        cleardevice();
+				cout<<"            ************Welcome To The KBC Game**********\n";
+				cout<<"________________________________________________________________________________\n\n";
+				delay(2000);
+				cout<<"Question 6- Who Is The Opposition Candidate Of Democrates\n\n";
+				cout<<"1- Donald Trump                2- Hillary Clinton\n";
+				cout<<"3- Barny Sanders               4- Ayush Dubey\n\n";
+				cout<<"Enter Choice ->";
+				cin>>a;
+				cout<<endl<<endl;
+				if(a==2)
+				{
+					cout<<"You Are Right And Win 60 Lakhs\n";
+					delay(2000);
+				}
+				else
+				{
+					clrscr();cleardevice();
+					cout<<"You Are Wrong And You Lose\n";
+					delay(700);
+					cout<<"1- Play Again\n\n";
+					cout<<"2- Quit";
+					cin>>a;
+					if(a==1)
+						goto top;
+					else
+					{
+						delay(500);
+						apps();
+					}					exit(0);
+				}
+			}
+			{
+				clrscr();        cleardevice();
+				cout<<"            ************Welcome To The KBC Game**********\n";
+				cout<<"________________________________________________________________________________\n\n";
+				delay(2000);
+				cout<<"Quit    (Press 0)";
+				cout<<"Question 7- Who Is The Chief Minister Of Delhi\n\n";
+				cout<<"1- Harish Rawat\t\t";delay(600);cout<<"2- Arvind Kejriwal\n\n";delay(600);
+				cout<<"3- Narendra Modi\t";delay(600);cout<<"4- Akhilesh Yadav\n\n";delay(600);
+				cout<<"Enter Choice ->";
+				cin>>a;
+				cout<<endl<<endl;
+				if(a==2)
+				{
+					cout<<"You Are Right And Win 70 Lakhs\n";
+					delay(2000);
+				}
+				else
+				{
+					clrscr();cleardevice();
+					cout<<"You Are Wrong And You Lose\n";
+					delay(700);
+					cout<<"1- Play Again\n\n";
+					cout<<"2- Quit";
+					cin>>a;
+					if(a==1)
+						goto top;
+					else
+					{
+						delay(500);
+						apps();
+					}
+				}
+
+			}
+			{
+				clrscr();        cleardevice();
+				cout<<"            ************Welcome To The KBC Game**********\n";
+				cout<<"________________________________________________________________________________\n\n";
+				delay(2000);
+				cout<<"Question 8- Who Is The Chief Minister Of Uttarakhand\n\n";
+				cout<<"1- Harish Rawat\t\t2- Arvind Kejriwal\n";
+				cout<<"3- Narendra Modi\t\t4- Akhilesh Yadav\n\n";
+				cout<<"Enter Choice ->";
+				cin>>a;
+				cout<<endl<<endl;
+				if(a==1)
+				{
+					cout<<"You Are Right And Win 80 Lakhs\n";
+					delay(2000);
+				}
+				else
+				{
+					clrscr();cleardevice();
+					cout<<"You Are Wrong And You Lose\n";
+					delay(700);
+					cout<<"1- Play Again\n\n";
+					cout<<"2- Quit";
+					cin>>a;
+					if(a==1)
+						goto top;
+					else
+					{
+						delay(500);
+						apps();
+					}
+				}
+			}
+			{
+				clrscr();        cleardevice();
+				cout<<"            ************Welcome To The KBC Game**********\n";
+				cout<<"________________________________________________________________________________\n\n";
+				delay(2000);
+				cout<<"Question 9- Who Is The Chief Minister Of Tamil Nadu\n\n";
+				cout<<"1- Harish Rawat\t\t2- Jay Lalita\n";
+				cout<<"3- Narendra Modi\t\t4- Akhilesh Yadav\n\n";
+				cout<<"Enter Choice ->";
+				cin>>a;
+				cout<<endl<<endl;
+				if(a==2)
+				{
+					cout<<"You Are Right And Win 90 Lakhs\n";
+					delay(2000);
+				}
+				else
+				{
+					clrscr();cleardevice();
+					cout<<"You Are Wrong And You Lose\n";
+					delay(700);
+					cout<<"1- Play Again\n\n";
+					cout<<"2- Quit";
+					cin>>a;
+					if(a==1)
+						goto top;
+					else
+					{
+						delay(500);
+						apps();
+					}
+				}
+			}
+			{
+				clrscr();        cleardevice();
+				cout<<"            ************Welcome To The KBC Game**********\n";
+				cout<<"________________________________________________________________________________\n\n";
+				delay(2000);
+				cout<<"Question 10- Who Is The Chief Minister Of Bihar\n\n";
+				cout<<"1- Harish Rawat\t\t2- Arvind Kejriwal\n";
+				cout<<"3- Narendra Modi\t\t4- Nitish Kumar\n\n";
+				cout<<"Enter Choice ->";
+				cin>>a;
+				cout<<endl<<endl;
+				if(a==4)
+				{
+					clrscr();cleardevice();
+					cout<<"You Are Right And You Cracked The Game\n";
+					cout<<b<<" **** Congratulations ****";
+					delay(2000);
+				}
+				else
+				{
+					clrscr();cleardevice();
+					cout<<"You Are Wrong And You Lose\n";
+					delay(700);
+					cout<<"1- Play Again\n\n";
+					cout<<"2- Quit";
+					cin>>a;
+					if(a==1)
+						goto top;
+					else
+					{
+						delay(500);
+						apps();
+					}
+				}
+			}
+		}
+		if(c1==2)
+		{
+			clrscr();                cleardevice();
+			cout<<"                 ########### Rules For KBC Program ##########\n";
+			cout<<"________________________________________________________________________________\n\n";
+			cout<<"Here Are The Question No's Indicated With Prize\n\n";
+			delay(2000);
+			cout<<" Question No-1 -10 Lakh\n";
+			delay(500);
+			cout<<" Question No-2 -20 Lakh\n";
+			delay(500);
+			cout<<" Question No-3 -30 Lakh\n";
+			delay(500);
+			cout<<" Question No-4 -40 Lakh\n";
+			delay(500);
+			cout<<" Question No-5 -50 Lakh\n";
+			delay(500);
+			cout<<" Question No-6 -60 Lakh\n";
+			delay(500);
+			cout<<" Question No-7 -70 Lakh\n";
+			delay(500);
+			cout<<" Question No-8 -80 Lakh\n";
+			delay(500);
+			cout<<" Question No-9 -90 Lakh\n";
+			delay(500);
+			cout<<" Question No-10 -1 Crore\n\n";
+			delay(1000);
+			cout<<" If Till 50 Lakhs Any Question Wrong Then Nothing And If After 50 Then 50 Lakhs\n\n";
+			delay(5000);
+			goto top;
+		}
+		if(c1==3)
+		{
+			clrscr();                cleardevice();
+			cout<<"Thanks For Using The Progaram\n\n";
+			delay(1000);
+			cout<<"The Program Is Exiting.................";
+			delay(2000);
+			apps();
+		}
+	}
+
+	apps();
+}
+void convertor()
+{
+	void apps();
+	convertor:
+	clrscr();
+	cleardevice();
+	setbkcolor(0);
+	settextstyle(7,0,4);
+	setcolor(5);
+	outtextxy(250,10,"CONVERTOR");
+	cout<<"\n\n\n________________________________________________________________________________";
+	settextstyle(2,0,7);
+	setcolor(9);
+	outtextxy(10,80,"1-> LENGTH");
+	outtextxy(10,110,"2-> VOLUME");
+	outtextxy(10,140,"3-> TEMPERATURE");
+	outtextxy(10,170,"4-> SPEED");
+	outtextxy(10,200,"5-> BACK");
+	int i;
+	cin>>i;
+	if(i==1)
+	{
+		clrscr();
+		cleardevice();
+		setbkcolor(10);
+		int a=0,b=0;
+		while(b<639)
+		{
+			{
+				outtextxy(627,a,"|");
+				outtextxy(3,a,"|");
+				a=a+15;
+			}
+			{
+				outtextxy(b,459,"-");
+				outtextxy(b,8,"-");
+				b=b+20;
+				delay(100);
+			}
+		}
+		cout<<"\n\n                        1-> From millimetre to centimetre\n\n";
+		cout<<"                          2-> From centimetre to metre\n\n";
+		cout<<"                          3-> From metre to kilometre\n\n";
+		cout<<"                          4-> From inches to feet\n\n";
+		cout<<"                          5-> From kilometre to miles\n\n";
+		cout<<"                             Please enter your choice"<<endl;
+		int f;
+		cin>>f;
+		if(f==1)
+		{
+			clrscr();
+			cleardevice();
+			setbkcolor(2);
+			cout<<"\n\n                       Please enter the length in millimetres"<<endl;
+			float cm1,mm1;
+			cin>>mm1;
+			cm1=mm1/10;
+			cout<<mm1<<" mm"<<" in centimetres= "<<cm1<<" cm"<<endl;
+			delay(2000);
+			goto convertor;
+		}
+		if(f==2)
+		{
+			clrscr();
+			cleardevice();
+			setbkcolor(2);
+			cout<<"\n\n                       Please enter the length in centimetres"<<endl;
+			float cm2,m1;
+			cin>>cm2;
+			m1=cm2/100;
+			cout<<cm2<<" cm"<<" in metres= "<<m1<<" m"<<endl;
+			delay(2000);
+			goto convertor;
+		}
+		if(f==3)
+		{
+
+			clrscr();
+			cleardevice();
+			setbkcolor(2);
+			cout<<"\n\n                       Please enter the length in metres"<<endl;
+			float km1,m2;
+			cin>>m2;
+			km1=m2/1000;
+			cout<<m2<<" metres"<<" in kilometres= "<<km1<<" km"<<endl;
+			delay(2000);
+			goto convertor;
+		}
+		if(f==4)
+		{
+
+			clrscr();
+			cleardevice();
+			setbkcolor(2);
+			cout<<"\n\n                       Please enter the length in inches"<<endl;
+			float in1,f1;
+			cin>>in1;
+			f1=in1/12;
+			cout<<in1<<" inches"<<" in feets= "<<f1<<" feets"<<endl;
+			delay(2000);
+			goto convertor;
+		}
+		if(f==5)
+		{
+
+			clrscr();
+			cleardevice();
+			setbkcolor(2);
+			cout<<"\n\n                        Please enter the length in kilometres"<<endl;
+			float km2,mi1;
+			cin>>km2;
+			mi1=km2*0.6;
+			cout<<km2<<" kilometres"<<" in miles= "<<mi1<<" miles"<<endl;
+			delay(2000);
+			goto convertor;
+		}
+	}
+	if(i==2)
+	{
+		clrscr();
+		cleardevice();
+		setbkcolor(1);
+		cout<<"\n\n1-> From litre to millilitre\n\n";
+		cout<<"2-> From litre to cubicmetre\n\n";
+		int g;
+		cout<<"                         Please enter your choice: "<<endl;
+		cin>>g;
+		if(g==1)
+		{
+			clrscr();
+			cleardevice();
+			setbkcolor(3);
+			cout<<"\n\n                          Please  enter the volume in litre\n";
+			float l,ml;
+			cin>>l;
+			ml=l*1000;
+			cout<<l<<" litres"<<" in millilitres= "<<ml<<" ml"<<endl;
+			delay(2000);
+			goto convertor;
+		}
+		if(g==2)
+		{	clrscr();
+			cleardevice();
+			setbkcolor(3);
+			cout<<"\n\n                          Please  enter the volume in litre\n";
+			float l,cm;
+			cin>>l;
+			cm=l/1000;
+			cout<<l<<" litres"<<" in cubicmetres= "<<cm<<" cubicmetres"<<endl;
+			delay(2000);
+			goto convertor;
+		}
+
+	}
+	if(i==3)
+	{
+		clrscr();
+		cleardevice();
+		setbkcolor(4);
+		cout<<"\n\n1-> From celsius to fahrenheit\n\n";
+		cout<<"2-> From celsius to kelvin\n\n";
+		cout<<"3-> From fahrenheit to kelvin\n"<<endl;
+		int j;
+		cout<<"                         Please enter your choice: "<<endl;
+		cin>>j;
+		if(j==1)
+		{
+			clrscr();
+			cleardevice();
+			setbkcolor(5);
+			float c,f,k;
+			cout<<"\n\n             Please enter the celsius scale"<<endl;
+			cin>>c;
+			f=((9*c)+160)/5;
+			cout<<c<<"celsius"<<" in fahrenheit scale= "<<f<<" f"<<endl;
+			delay(2000);
+			goto convertor;
+
+		}
+		if(j==2)
+		{
+			clrscr();
+			cleardevice();
+			setbkcolor(5);
+			float c,k;
+			cout<<"\n\n                         Please enter the celsius scale"<<endl;
+			cin>>c;
+			k=c+273.15;
+			cout<<c<<"celsius"<<" in kelvin scale= "<<k<<" kelvin"<<endl;
+			delay(2000);
+			goto convertor;
+
+		}
+		if(j==3)
+		{
+			clrscr();
+			cleardevice();
+			setbkcolor(5);
+			float f,k;
+			cout<<"\n\n                         Please enter the values in fahrenheit scale"<<endl;
+			cin>>f;
+			k=f+255.9;
+			cout<<f<<"fahrenheit"<<" in kelvin scale= "<<k<<" kelvin"<<endl;
+			delay(2000);
+			goto convertor;
+		}
+	}
+	if(i==4)
+	{
+		clrscr();
+		cleardevice();
+		setbkcolor(6);
+		cout<<"\n\n                     1-> From kilometre per hour to metre per hour\n\n";
+		cout<<"                        2-> From kilometre per hour to metre per second\n\n";
+		cout<<"             Please enter your choice"<<endl;
+		int y;
+		cin>>y;
+		if(y==1)
+		{
+			clrscr();
+			cleardevice();
+			setbkcolor(7);
+			cout<<"\n\n                             Please enter the speed in km/h - ";
+			float kh,mh;
+			cin>>kh;
+			mh=kh*1000;
+			cout<<kh<<" km/h"<<" in metre per hour= "<<mh<<" m/h";
+			delay(2000);
+			goto convertor;
+		}
+		if(y==2)
+		{
+			clrscr();
+			cleardevice();
+			setbkcolor(7);
+			cout<<"\n\n                             Please enter the speed in km/h - ";
+			float kh,ms;
+			cin>>kh;
+			ms=(kh*1000)/60;
+			cout<<kh<<" km/h"<<" in metre per second= "<<ms<<" m/s";
+			delay(2000);
+			goto convertor;
+		}
+	}
+	if(i==5)
+	{
+		apps();
+	}
+
+}
+//GAME ENDS
+
+//STOPWATCH STARTS
+void stop()
+{
+	void apps();
+	clrscr();
+	cleardevice();
+	setbkcolor(0);
+	settextstyle(7,0,4);
+	setcolor(5);
+	outtextxy(250,10,"STOPWATCH");
+	cout<<"\n\n\n________________________________________________________________________________";
+	settextstyle(2,0,7);
+	setcolor(9);
+	outtextxy(2,90,"PLEASE");
+	delay(300);
+	outtextxy(90,90,"PRESS");
+	delay(300);
+	outtextxy(168,90,"ENTER");
+	delay(300);
+	outtextxy(245,90,"FOR");
+	delay(300);
+	outtextxy(300,90,"SWITCHING");
+	delay(300);
+	outtextxy(422,90,"OFF");
+	delay(300);
+	outtextxy(475,90,"STOPWATCH");
+	delay(300);
+	int a=00,b=00,c=00;
+	clrscr();
+	cleardevice();
+	setbkcolor(0);
+	cout<<"\n\n\n\n\n\n\n                                               ";
+	while(!kbhit())
+	{
+		clrscr();
+		cleardevice();
+		settextstyle(7,0,4);
+		setcolor(5);
+		outtextxy(250,10,"STOPWATCH");
+		cout<<"\n\n\n________________________________________________________________________________";
+
+		cout<<"\n\n\n\n                                      HH : MM : SS";
+		cout<<"\n                                      ";
+		a++;
+		cout<<c<<"  : "<<b<<"  : "<<a;
+		delay(1000);
+		if(a==60)
+		{
+			b++;
+			a=0;
+		}
+		if(b==60)
+		{
+			c++;
+			b=0;
+		}
+	}
+	delay(500);
+	apps();
+}
+//GAME ENDS
+
+//RETURNING FUNCTION
+void back()
+{
+	void home();
+	home();
+}
+//RETURNING FUNCTION ENDS
+
+//FLASHLIGHT STARTS
+void flash()
+{
+	void apps();
+	clrscr();
+	cleardevice();
+	setbkcolor(0);
+	settextstyle(2,0,7);
+	setcolor(9);
+	outtextxy(2,50,"PLEASE");
+	delay(300);
+	outtextxy(90,50,"PRESS");
+	delay(300);
+	outtextxy(168,50,"ENTER");
+	delay(300);
+	outtextxy(245,50,"FOR");
+	delay(300);
+	outtextxy(300,50,"SWITCHING");
+	delay(300);
+	outtextxy(422,50,"OFF");
+	delay(300);
+	outtextxy(475,50,"FLASHLIGHT");
+	delay(300);
+	clrscr();
+	cleardevice();
+	while(!kbhit())
+	{
+		setbkcolor(15);
+	}
+	apps();
+}
+//FLASHLIGHT ENDS
+
+//MENDURATION STARTS
+void mens()
+{
+	clrscr();
+	cleardevice();
+    setbkcolor(0);
+	float c1,c2,c3,c4,a,b,s,p,t,v,l,h;
+	void apps();
+	top:
+	cout<<"                                  ----------------"<<endl;
+	cout<<"  :-----------------------------> Mensuration Menu <-------------------------:"<<endl;
+	cout<<"                                  ----------------"<<endl<<endl<<endl;
+	cout<<"                             |1| 2D Figures (Press 1)"<<endl<<endl;
+	cout<<"                             |2| 3D Figures (Press 2)"<<endl<<endl;
+	cout<<"                             |3| EXIT       (Press 3)"<<endl<<endl<<endl;
+	cout<<"                             Please Enter Your Choice"<<endl<<endl;
+	cin>>c1;
+	if(c1==1)
+	{
+		clrscr();
+		cleardevice();
+		mid1:
+		cout<<"                                 ----------------"<<endl;
+		cout<<"  :----------------------------> 2-D Figures Menu <--------------------------:"<<endl;
+		cout<<"                                 ----------------"<<endl<<endl<<endl;
+		cout<<"                            |1| Circle       (Press 1)"<<endl<<endl;
+		cout<<"                            |2| Square       (Press 2)"<<endl<<endl;
+		cout<<"                            |3| Rectangle    (Press 3)"<<endl<<endl;
+		cout<<"                            |4| Back menu    (Press 4)"<<endl<<endl;
+		cout<<"                            |5| EXIT         (Press 5)"<<endl<<endl<<endl;
+		cout<<"                             Please Enter Your Choice"<<endl<<endl;
+		cin>>c2;
+		if(c2==1)
+		{
+			clrscr();
+			cleardevice();
+			m1:
+			cout<<"|1| Area          (Press 1)"<<endl<<endl;
+			cout<<"|2| Circumference (Press 2)"<<endl<<endl;
+			cout<<"|3| Back Menu     (Press 3)"<<endl<<endl;
+			cout<<"|4| EXIT          (Press 4)"<<endl<<endl;
+			cout<<"Please Enter Your Choice"<<endl<<endl;
+			cin>>c3;
+			if(c3==1)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"This Program Will Calculate Area Of Circle"<<endl<<endl;
+				cout<<"Please Enter Radius of Circle"<<endl<<endl;
+				cin>>a;
+				b=3.14*a*a;
+				cout<<"The Area Of Circle is="<<b<<endl<<endl;
+				cout<<"If You Want To calculate again Press 1 If you want to Exit press 2"<<endl;
+				cin>>c4;
+				if(c4==1)
+				{	clrscr();
+					cleardevice();
+					delay(1000);
+					goto m1;
+				}
+				else if(c4==2)
+				{
+					clrscr();
+					cleardevice();
+					delay(1000);
+					apps();
+				}
+			}
+			else if(c3==2)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"This Program will calculate Perimeter of Circle"<<endl<<endl;
+				cout<<"Please Enter The Radius Of Circle"<<endl<<endl;
+				cin>>a;
+				b=2*3.14*a;
+				cout<<"The Circumference of Circle is="<<b<<endl;
+				cout<<"If You Want To calculate again Press 1 If you want to Exit press 2"<<endl;
+				cin>>c4;
+				if(c4==1)
+				{	clrscr();
+					cleardevice();
+					delay(1000);
+					goto m1;
+				}
+				else if(c4==2)
+				{
+					clrscr();
+					cleardevice();
+					delay(1000);
+					apps();
+				}
+			}
+			else if(c3==3)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"You Will Be Redirected To 2-D Figure Menu"<<endl;
+				delay(2000);
+				clrscr();
+				goto mid1;
+			}
+			else if(c3==4)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"The Program Is Being terminated."<<endl;
+				delay(1000);
+				cout<<"Thanks For Using"<<endl;
+				delay(1000);
+				apps();
+			}
+			else
+			{
+				clrscr();
+				cleardevice();
+				cout<<"Wrong Input.Try Again"<<endl;
+				delay(2000);
+				clrscr();
+				goto m1;
+			}
+		}
+		else if(c2==2)
+		{
+			clrscr();
+			cleardevice();
+			m2:
+			cout<<"|1| Area      (Press 1)"<<endl<<endl;
+			cout<<"|2| Perimeter (Press 2)"<<endl<<endl;
+			cout<<"|3| Back Menu (Press 3)"<<endl<<endl;
+			cout<<"|4| EXIT      (Press 4)"<<endl<<endl;
+			cout<<"Please Enter Your Choice"<<endl<<endl;
+			cin>>c3;
+			if(c3==1)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"This Program Will Calculate Area Of Square"<<endl<<endl;
+				cout<<"Please Enter The Measure Of Side"<<endl<<endl;
+				cin>>s;
+				a=s*s;
+				cout<<"The Area of Square is="<<a<<endl<<endl;
+				cout<<"If You Want To calculate again Press 1.If you want to Exit press 2"<<endl;
+				cin>>c4;
+				if(c4==1)
+				{	clrscr();
+					cleardevice();
+					delay(1000);
+					goto m2;
+				}
+				else if(c4==2)
+				{
+					clrscr();
+					cleardevice();
+					delay(1000);
+					apps();
+				}
+			}
+			else if(c3==2)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"This Program Will Calculate perimeter Of Square"<<endl<<endl;
+				cout<<"Please Enter measurement Of Side"<<endl<<endl;
+				cin>>s;
+				p=4*s;
+				cout<<"The Perimeter Of Square is="<<p<<endl<<endl;
+				cout<<"If You Want To calculate again Press 1 If you want to Exit press 2"<<endl;
+				cin>>c4;
+				if(c4==1)
+				{	clrscr();
+					cleardevice();
+					delay(1000);
+					goto m2;
+				}
+				else if(c4==2)
+				{
+					clrscr();
+					cleardevice();
+					delay(1000);
+					apps();
+				}
+			}
+			else if(c3==3)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"You Will Be Redirected To 2-D Figure Menu"<<endl;
+				delay(2000);
+				clrscr();
+				cleardevice();
+				goto mid1;
+			}
+			else if(c3==4)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"The Program Is Being terminated."<<endl;
+				delay(1000);
+				cout<<"Thanks For Using"<<endl;
+				delay(1000);
+				apps();
+			}
+			else
+			{
+				clrscr();
+				cleardevice();
+				cout<<"Wrong Input.Try Again"<<endl;
+				delay(2000);
+				clrscr();
+				cleardevice();
+				goto m2;
+			}
+		}
+		else if(c2==3)
+		{
+			clrscr();
+			cleardevice();
+			m3:
+			cout<<"|1| Area      (Press 1)"<<endl<<endl;
+			cout<<"|2| Perimeter (Press 2)"<<endl<<endl;
+			cout<<"|3| Back Menu (Press 3)"<<endl<<endl;
+			cout<<"|4| EXIT      (Press 4)"<<endl<<endl;
+			cout<<"Please Enter Your Choice"<<endl<<endl;
+			cin>>c3;
+			if(c3==1)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"This Program Will Calculate Area Of Rectangle"<<endl<<endl;
+				cout<<"Please Enter The Measure Of Two Sides"<<endl<<endl;
+				cin>>s;
+				cin>>p;
+				a=s*p;
+				cout<<"The Area of Rectangle is="<<a<<endl<<endl;
+				cout<<"If You Want To calculate again Press 1 If you want to Exit press 2"<<endl;
+				cin>>c4;
+				if(c4==1)
+				{	clrscr();
+					cleardevice();
+					delay(1000);
+					goto m3;
+				}
+				else if(c4==2)
+				{
+					clrscr();
+					cleardevice();
+					delay(1000);
+					apps();
+				}
+			}
+			else if(c3==2)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"This Program Will Calculate perimeter Of Rectangle"<<endl<<endl;
+				cout<<"Please Enter measurement Of Two Sides"<<endl<<endl;
+				cin>>s;
+				cin>>p;
+				p=2*(s+p);
+				cout<<"The Perimeter Of rectangle is="<<p<<endl<<endl;
+				cout<<"If You Want To calculate again Press 1 If you want to Exit press 2"<<endl;
+				cin>>c4;
+				if(c4==1)
+				{	clrscr();
+					cleardevice();
+					delay(1000);
+					goto m3;
+				}
+				else if(c4==2)
+				{
+					clrscr();
+					cleardevice();
+					delay(1000);
+					apps();
+				}
+			}
+			else if(c3==3)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"You Will Be Redirected To 2-D Figure Menu"<<endl;
+				delay(2000);
+				clrscr();
+				goto mid1;
+			}
+			else if(c3==4)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"The Program Is Being terminated."<<endl;
+				delay(1000);
+				cout<<"Thanks For Using"<<endl;
+				delay(1000);
+				apps();
+			}
+			else
+			{
+				clrscr();
+				cleardevice();
+				cout<<"Wrong Input.Try Again"<<endl;
+				delay(2000);
+				clrscr();
+				cleardevice();
+				goto m3;
+			}
+		}
+		else if(c2==4)
+		{
+			clrscr();
+			cleardevice();
+			cout<<"You Will Be Redirected to The Main Menu"<<endl;
+			delay(2000);
+			clrscr();
+			goto top;
+		}
+		else if(c2==5)
+		{
+			clrscr();
+			cleardevice();
+			cout<<"Program is Being Terminated"<<endl;
+			delay(2000);
+			cout<<"Thank You for using";
+			delay(1000);
+			apps();
+		}
+		else
+		{
+			clrscr();
+			cleardevice();
+			cout<<"Wrong choice entered.Try Again"<<endl;
+			delay(2000);
+			clrscr();
+			goto mid1;
+		}
+
+	}
+	else if(c1==2)
+	{
+		clrscr();
+		cleardevice();
+		mid2:
+		cout<<"                                   -----------"<<endl;
+		cout<<"  :------------------------------> 3-D Figures <----------------------------:"<<endl;
+		cout<<"                                   -----------"<<endl<<endl<<endl;
+		cout<<"                             |1| Cube      (Press 1)"<<endl<<endl;
+		cout<<"                             |2| Cuboid    (Press 2)"<<endl<<endl;
+		cout<<"                             |3| Sphere    (Press 3)"<<endl<<endl;
+		cout<<"                             |4| Back Menu (Press 4)"<<endl<<endl;
+		cout<<"                             |5| EXIT      (Press 5)"<<endl<<endl;
+		cin>>c2;
+		if(c2==1)
+		{
+			clrscr();
+			cleardevice();
+			m4:
+			cout<<"|1| Total Surface Area (Press 1)"<<endl<<endl;
+			cout<<"|2| Volume             (Press 2)"<<endl<<endl;
+			cout<<"|3| Back Menu          (Press 3)"<<endl<<endl;
+			cout<<"|4| EXIT               (Press 4)"<<endl<<endl;
+			cin>>c3;
+			if(c3==1)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"This Program Will Calculate T.S.A of Cube"<<endl<<endl;
+				cout<<"Please Enter Measurement of Side Of Cube"<<endl<<endl;
+				cin>>a;
+				t=6*a*a;
+				cout<<"The T.S.A of Cube is="<<t<<endl<<endl;
+				cout<<"If You Want To calculate again Press 1 If you want to Exit press 2"<<endl;
+				cin>>c4;
+				if(c4==1)
+				{	clrscr();
+					cleardevice();
+					delay(1000);
+					goto m4;
+				}
+				else if(c4==2)
+				{
+					clrscr();
+					cleardevice();
+					delay(1000);
+					apps();
+				}
+			}
+			else if(c3==2)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"This program will Calculate The Volume of Cube"<<endl<<endl;
+				cout<<"Please Enter measurement of Side of Cube"<<endl<<endl;
+				cin>>a;
+				v=a*a*a;
+				cout<<"The Volume Of Cube Is="<<v<<endl<<endl;
+				cout<<"If You Want To calculate again Press 1 If you want to Exit press 2"<<endl;
+				cin>>c4;
+				if(c4==1)
+				{	clrscr();
+					cleardevice();
+					delay(1000);
+					goto m4;
+				}
+				else if(c4==2)
+				{
+					clrscr();
+					cleardevice();
+					delay(1000);
+					apps();
+				}
+			}
+			else if(c3==3)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"You Will Be Redirected To 3-D Figure Menu"<<endl;
+				delay(2000);
+				clrscr();
+				cleardevice();
+				goto mid2;
+			}
+			else if(c3==4)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"The Program Is Being terminated."<<endl;
+				delay(1000);
+				cout<<"Thanks For Using"<<endl;
+				delay(1000);
+				apps();
+			}
+			else
+			{
+				clrscr();
+				cleardevice();
+				cout<<"Wrong Input.Try Again"<<endl;
+				delay(2000);
+				clrscr();
+				cleardevice();
+				goto m4;
+			}
+		}
+		else if(c2==2)
+		{
+			clrscr();
+			cleardevice();
+			m5:
+			cout<<"|1| Total Surface Area (Press 1)"<<endl<<endl;
+			cout<<"|2| Volume             (Press 2)"<<endl<<endl;
+			cout<<"|3| Back menu          (Press 3)"<<endl<<endl;
+			cout<<"|4| EXIT               (Press 4)"<<endl<<endl;
+			cin>>c3;
+			if(c3==1)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"This Program Will Calculate T.S.A of Cuboid"<<endl<<endl;
+				cout<<"Please Enter Measurement of Length ,Breadth and Height Of Cuboid"<<endl<<endl;
+				cin>>l;
+				cin>>b;
+				cin>>h;
+				t=2*((l*b)+(b*h)+(h*l));
+				cout<<"The T.S.A of Cuboid is="<<t<<endl<<endl;
+				cout<<"If You Want To calculate again Press 1 If you want to Exit press 2"<<endl;
+				cin>>c4;
+				if(c4==1)
+				{	clrscr();
+					cleardevice();
+					delay(1000);
+					goto m5;
+				}
+				else if(c4==2)
+				{
+					clrscr();
+					cleardevice();
+					delay(1000);
+					apps();
+				}
+			}
+			else if(c3==2)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"This program will Calculate The Volume of Cuboid"<<endl<<endl;
+				cout<<"Please Enter measurement of Length, Breadth and Height of Cuboid"<<endl<<endl;
+				cin>>l;
+				cin>>b;
+				cin>>h;
+				v=l*b*h;
+				cout<<"The Volume Of Cuboid Is="<<v<<endl<<endl;
+				cout<<"If You Want To calculate again Press 1 If you want to Exit press 2"<<endl;
+				cin>>c4;
+				if(c4==1)
+				{	clrscr();
+					cleardevice();
+					delay(1000);
+					goto m5;
+				}
+				else if(c4==2)
+				{
+					clrscr();
+					cleardevice();
+					delay(1000);
+					apps();
+				}
+			}
+			else if(c3==3)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"You Will Be Redirected To 3-D Figure Menu"<<endl;
+				delay(2000);
+				clrscr();
+				cleardevice();
+				goto mid2;
+			}
+			else if(c3==4)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"The Program Is Being terminated."<<endl;
+				delay(1000);
+				cout<<"Thanks For Using"<<endl;
+				delay(1000);
+				apps();
+			}
+			else
+			{
+				clrscr();
+				cleardevice();
+				cout<<"Wrong Input.Try Again"<<endl;
+				delay(2000);
+				clrscr();
+				cleardevice();
+				goto m5;
+			}
+		}
+		else if(c2==3)
+		{
+			clrscr();
+			cleardevice();
+			m6:
+			cout<<"|1| S.A          (Press 1)"<<endl<<endl;
+			cout<<"|2| Volume       (Press 2)"<<endl<<endl;
+			cout<<"|3| Back menu    (Press 3)"<<endl<<endl;
+			cout<<"|4| EXIT         (Press 4)"<<endl<<endl;
+			cin>>c3;
+			if(c3==1)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"This Program Will Calculate S.A of Sphere"<<endl<<endl;
+				cout<<"Please Enter Measurement of Radius Of Sphere"<<endl<<endl;
+				cin>>a;
+				t=4*3.14*a*a;
+				cout<<"The S.A of Sphere is="<<t<<endl<<endl;
+				cout<<"If You Want To calculate again Press 1 If you want to Exit press 2"<<endl;
+				cin>>c4;
+				if(c4==1)
+				{	clrscr();
+					cleardevice();
+					delay(1000);
+					goto m6;
+				}
+				else if(c4==2)
+				{
+					clrscr();
+					cleardevice();
+					delay(1000);
+					apps();
+				}
+			}
+			else if(c3==2)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"This program will Calculate The Volume of Sphere"<<endl<<endl;
+				cout<<"Please Enter measurement of Radius of Sphere"<<endl<<endl;
+				cin>>a;
+				v=1.333*3.14*pow(a,3);
+				cout<<"The Volume Of Sphere Is="<<v<<endl<<endl;
+				cout<<"If You Want To calculate again Press 1 If you want to Exit press 2"<<endl;
+				cin>>c4;
+				if(c4==1)
+				{	clrscr();
+					cleardevice();
+					delay(1000);
+					goto m6;
+				}
+				else if(c4==2)
+				{
+					clrscr();
+					cleardevice();
+					delay(1000);
+					apps();
+				}
+			}
+			else if(c3==3)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"You Will Be Redirected To 3-D Figure Menu"<<endl;
+				delay(2000);
+				clrscr();
+				cleardevice();
+				goto mid2;
+			}
+			else if(c3==4)
+			{
+				clrscr();
+				cleardevice();
+				cout<<"The Program Is Being terminated."<<endl;
+				delay(1000);
+				cout<<"Thanks For Using"<<endl;
+				delay(1000);
+				apps();
+			}
+			else
+			{
+				clrscr();
+				cleardevice();
+				cout<<"Wrong Input.Try Again"<<endl;
+				delay(2000);
+				clrscr();
+				goto m6;
+			}
+		}
+		else if(c2==4)
+		{
+			clrscr();
+			cleardevice();
+			cout<<"You Will Be Redirected To Main Menu"<<endl;
+			delay(2000);
+			goto top;
+		}
+		else if(c2==5)
+		{
+			clrscr();
+			cleardevice();
+			cout<<"The Program Is Being Terminated"<<endl;
+			delay(1000);
+			cout<<"Thanks For Using"<<endl;
+			delay(1000);
+			apps();
+		}
+		else
+		{
+			clrscr();
+			cleardevice();
+			cout<<"Wrong Choice Entered.Try Again"<<endl;
+			delay(2000);
+			clrscr();
+			cleardevice();
+			goto mid2;
+		}
+	}
+	else if(c1==3)
+	{
+		clrscr();
+		cleardevice();
+		cout<<"The Program is been Terminated"<<endl<<endl;
+		delay(1000);
+		cout<<"Thank You For Using"<<endl;
+		delay(2000);
+		apps();
+	}
+	else
+	{
+		clrscr();
+		cleardevice();
+		cout<<"Please Enter A Valid Command.Try Again"<<endl<<endl;
+		delay(2000);
+		clrscr();
+		cleardevice();
+		goto top;
+	}
+}
+//MENSURATION ENDS
+
+//APP FUNCTION STARTS
+void apps()
+{
+	void home();
+	clrscr();
+	cleardevice();
+	setbkcolor(7);
+	settextstyle(7,0,4);
+	setcolor(5);
+	outtextxy(250,10,"A P P S");
+	cout<<"\n\n\n________________________________________________________________________________";
+	settextstyle(2,0,8);
+	setcolor(9);
+	outtextxy(50,120,"1-> CRICCBUZ");
+	outtextxy(400,120,"2-> DR. VSEC");
+	outtextxy(50,170,"3-> CALCULATOR");
+	outtextxy(400,170,"4-> GAMES");
+	outtextxy(50,220,"5-> CONVERTOR");
+	outtextxy(400,220,"6-> STOPWATCH");
+	outtextxy(50,270,"7-> FLASHLIGHT");
+	outtextxy(400,270,"8-> MENSURATION");
+	settextstyle(2,0,8);
+	outtextxy(460,415,"BACK(PRESS B)");
+	settextstyle(2,0,8);
+	outtextxy(50,360,"Enter Your Choice ->");
+	char i;
+	cin>>i;
+	if(i=='1')
+	{
+		cric();
+	}
+ 	else if(i=='2')
+	{
+		start();
+	}
+	else if(i=='3')
+	{
+		calculator();
+	}
+	else if(i=='4')
+	{
+		game();
+	}
+	else if(i=='5')
+	{
+		convertor();
+	}
+	else if(i=='6')
+	{
+		stop();
+	}
+	else if(i=='7')
+	{
+		flash();
+	}
+	else if(i=='8')
+	{
+		mens();
+	}
+	else
+		home();
+}
+//APP FUNCTION ENDS
+
+//GOTO FUNCTION STARTS
+void go()
+{
+	void home();
+	clrscr();
+	cleardevice();
+	setbkcolor(7);
+	settextstyle(7,0,4);
+	setcolor(5);
+	outtextxy(250,10,"SHORTCUT");
+	cout<<"\n\n\n________________________________________________________________________________";
+	settextstyle(2,0,8);
+	setcolor(9);
+	outtextxy(50,120,"1-> FLASHLIGHT");
+	outtextxy(50,170,"2-> LOCKSCREEN");
+	outtextxy(50,220,"3-> SHUTDOWN");
+	outtextxy(150,270,"Enter Your Choice ->");
+	int i;
+	cin>>i;
+	if(i==1)
+	{
+		flash();
+	}
+	else if(i==2)
+	{
+		pass();
+		home();
+	}
+	else if(i==3)
+	{
+			clrscr();
+			cleardevice();
+			cout<<"THE MOBILE IS GETTING SHUT DOWN";
+			for(int i=0;i<9;i++)
+			{
+				cout<<".";
+				delay(200);
+			}
+			exit(0);
+	}
+	else
+	{
+		home();
+	}
+}
+//GOTO FUNCTION ENDS
+
+//HOME FUNCTION STARTS
+void home()
+{
+	clrscr();
+	cleardevice();
+	textbackground(BLUE);
+	cout<<"! NETWORK ERROR                                             WI-FI AVAILABLE";
+	for(int i=3;i<20;i++)
+	{
+		delay(20);
+		setcolor(i/5);
+		arc(615,15,60,120,i-5);
+	}
+	cout<<"\n________________________________________________________________________________";
+	setbkcolor(4);
+	settextstyle(6,0,3);
+	outtextxy(280,70,"DP MOBILE");
+	settextstyle(10,0,4);
+	setcolor(15);
+	outtextxy(190,130,"A I R T E L");
+	settextstyle(8,0,2);
+	setcolor(10);
+	outtextxy(190,220,"12:00 am       SUNNY");
+	settextstyle(3,0,1);
+	setcolor(7);
+	outtextxy(295,290,"SILENT");
+	cout<<"\n\n\n\n\n\n\n\n\n\n\n                        _________________________________";
+	cout<<"\n\n\n                        _________________________________";
+	outtextxy(30,400,"APPS(PRESS 1)");
+	rectangle(300,400,330,430);
+	{
+		settextstyle(10,0,2);
+		outtextxy(311,390,"f");
+	}
+	setfillstyle(1,1);
+	floodfill(301,401,7);
+	settextstyle(3,0,1);
+	outtextxy(480,400,"GO TO(PRESS 2)");
+	char ch;
+	cin>>ch;
+	if(ch==49)
+	{
+		apps();
+	}
+	else if(ch==50)
+	{
+		go();
+	}
+	else if(ch=='f'||ch=='F')
+	{
+		clrscr();
+		cleardevice();
+		settextstyle(10,0,3);
+		outtextxy(50,150,"NETWORK ERROR");
+		delay(1000);
+		home();
+	}
+	else
+	{
+		clrscr();
+		cleardevice();
+		cout<<"Invalid Entry";
+		for(int i=0;i<9;i++)
+		{
+			cout<<".";
+			delay(100);
+            home();
+		}
+	}
+
+}
+//HOME FUNCTION ENDS
+
+//MAIN FUNCTION
+void main()
+{
+	clrscr();
+	int gdriver = DETECT,gmode;
+	initgraph(&gdriver,&gmode,"");
+    pass();
+	home();
+	getch();
+}
