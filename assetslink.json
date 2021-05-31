@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "talawa",
+            "package_name": "com.example.talawa",
+            "sha256_cert_fingerprints": [
+                "04:C6:3D:5D:36:F9:4F:B9:44:3F:CB:56:BD:F2:B4:06:22:31:6F:1A:B3:DE:35:22:83:93:F5:2B:3F:B6:71:A8"
+            ]
+        }
+    }
+]
